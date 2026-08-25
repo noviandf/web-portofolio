@@ -1,0 +1,16 @@
+[
+  {
+    "id": "agent-scheduling",
+    "title": "Agent Shift Scheduling & KPI System",
+    "tech_stack": ["Laravel 12", "MySQL", "RBAC"],
+    "summary": "Sistem manajemen operasional dengan Role-Based Access Control untuk penjadwalan dan rekapitulasi KPI agen.",
+    "status": "Completed"
+  },
+  {
+    "id": "automated-hardware-monitor",
+    "title": "Automated Hardware Monitor",
+    "tech_stack": ["PowerShell", "REST API", "Windows Event Viewer"],
+    "summary": "Skrip otomatisasi untuk memonitor kesehatan perangkat keras (RAM, Disk, Baterai) dan sinkronisasi log anomali ke API terpusat.",
+    "status": "Completed"
+  }
+]
