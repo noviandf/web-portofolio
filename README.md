@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Personal Portfolio Website
 
-First, run the development server:
+A modern, responsive personal portfolio website built with **Next.js**, **Tailwind CSS**, and deployed on **Vercel** with custom domain routing via **Cloudflare DNS**. Designed to showcase my engineering background in backend web development, IT support infrastructure, and client-side automation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🌐 Live Demo
+
+* **Website:** [noviandf.web.id](https://noviandf.web.id)
+* **GitHub Repository:** [github.com/noviandf/web-portfolio](https://github.com/noviandf/web-portfolio)
+
+---
+
+## 🚀 Featured Showcase Projects
+
+* **IT Ticketing & Hardware Telemetry System:** Laravel & WebSocket real-time ticket handling integrated with client-side PowerShell hardware telemetry collection.
+* **IT Asset Management System:** CodeIgniter 4 inventory tracking system for hardware lifecycle, device mutation logs, and maintenance reporting.
+* **Shift Scheduling & KPI Evaluation System:** Web-based shift management and agent performance KPI tracking platform built with Laravel & MySQL.
+* **Personal Finance Tracker:** Next.js financial management app integrated with Google Apps Script and Google Sheets as a serverless database backend.
+* **Infrastructure Monitoring Setup:** Grafana dashboards and Uptime Kuma monitoring engine configured on Debian Linux servers to track network routing and service uptime.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Framework:** Next.js 14/15 (React)
+* **Styling:** Tailwind CSS, PostCSS
+* **Icons & UI Assets:** Lucide React, WebP Optimized Media Assets
+* **Deployment & Hosting:** Vercel
+* **DNS & Security:** Cloudflare DNS
+
+---
+
+## 📁 Project Structure
+
+```text
+├── app/
+│   ├── globals.css          # Global styling & Tailwind directives
+│   ├── layout.tsx           # Root layout with SEO metadata & viewport settings
+│   └── page.tsx             # Main landing single-page section renderer
+├── data/
+│   └── projects.json        # Structured project catalog & metadata
+├── public/
+│   ├── cv.pdf               # Downloadable curriculum vitae
+│   └── images/              # Optimized WebP/PNG preview assets
+├── package.json             # Dependencies & build scripts
+└── tailwind.config.ts       # Custom Tailwind theme configurations
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Local Development Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone Repository**
+```bash
+git clone [https://github.com/noviandf/web-portfolio.git](https://github.com/noviandf/web-portfolio.git)
+cd web-portfolio
 
-## Learn More
+```
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install Dependencies**
+```bash
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run Local Development Server**
+```bash
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+
+*Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.*
+4. **Build Production Bundle**
+```bash
+npm run build
+npm run start
+
+```
+
+
+
+---
+
+## 📄 License & Attribution
+
+Designed and developed by **Novian Dwi Fernanda**. Feel free to explore the codebase for learning or reference purposes.
+
+```
+
+```
