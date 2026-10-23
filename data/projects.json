@@ -45,7 +45,6 @@
   "tech_stack": ["Next.js", "Google Apps Script", "Google Sheets API"],
   "summary": "Aplikasi pelacakan finansial berarsitektur serverless, mengintegrasikan frontend modern dengan Google Apps Script sebagai REST API dan Spreadsheet sebagai basis data tanpa biaya server.",
   "image": "/images/finance-tracker.webp",
-  "repo_url": "https://github.com/username/finance-app",
-  "live_url": "https://finance-tracker-eta-swart.vercel.app/"
+  "repo_url": "https://github.com/noviandf/Finance-App"
 }
 ]
