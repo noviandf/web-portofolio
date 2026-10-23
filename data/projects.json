@@ -1,16 +1,51 @@
 [
   {
-    "id": "agent-scheduling",
-    "title": "Agent Shift Scheduling & KPI System",
-    "tech_stack": ["Laravel 12", "MySQL", "RBAC"],
-    "summary": "Sistem manajemen operasional dengan Role-Based Access Control untuk penjadwalan dan rekapitulasi KPI agen.",
-    "status": "Completed"
+    "id": "it-ticketing",
+    "title": "Internal IT Ticketing System",
+    "tech_stack": ["Laravel 12", "MySQL", "WebSockets", "PowerShell"],
+    "summary": "Sistem helpdesk internal dengan notifikasi real-time dan Lightweight Daily Hardware Telemetry untuk efisiensi resource server.",
+    "image": "/images/it-ticketing.webp",
+    "repo_url": "https://github.com/noviandf/web-ticketing"
   },
   {
-    "id": "automated-hardware-monitor",
-    "title": "Automated Hardware Monitor",
-    "tech_stack": ["PowerShell", "REST API", "Windows Event Viewer"],
-    "summary": "Skrip otomatisasi untuk memonitor kesehatan perangkat keras (RAM, Disk, Baterai) dan sinkronisasi log anomali ke API terpusat.",
-    "status": "Completed"
-  }
+    "id": "asset-management",
+    "title": "IT Asset Management",
+    "tech_stack": ["CodeIgniter 4", "MySQL", "Bootstrap"],
+    "summary": "Platform pencatatan dan pelacakan siklus hidup perangkat keras untuk mempermudah audit inventaris IT perusahaan.",
+    "image": "/images/asset-management.webp",
+    "repo_url": "https://github.com/noviandf/it-asset-management"
+  },
+  {
+    "id": "grafana-mikrotik",
+    "title": "MikroTik Network Monitoring",
+    "tech_stack": ["Grafana", "MikroTik", "SNMP"],
+    "summary": "Dasbor analitik real-time untuk visualisasi lalu lintas jaringan, metrik bandwidth, dan kesehatan RouterBoard.",
+    "image": "/images/grafana-mikrotik.webp",
+    "repo_url": "https://github.com/noviandf/local-monitoring-stack"
+  },
+  {
+    "id": "uptime-kuma",
+    "title": "Infrastructure Uptime Monitor",
+    "tech_stack": ["Uptime Kuma", "Docker", "Debian Linux"],
+    "summary": "Sistem pemantauan proaktif untuk mendeteksi downtime pada server lokal dan endpoint API, di-deploy di atas container Docker.",
+    "image": "/images/uptime-kuma.webp",
+    "repo_url": "https://github.com/noviandf/local-monitoring-stack"
+  },
+  {
+    "id": "agent-scheduling",
+    "title": "Agent Shift Scheduling & KPI",
+    "tech_stack": ["Laravel 12", "MySQL", "Tailwind CSS"],
+    "summary": "Sistem operasional call center dengan Role-Based Access Control (RBAC) untuk manajemen jadwal shift dan rekapitulasi metrik KPI agen.",
+    "image": "/images/agent-scheduling.webp",
+    "repo_url": "https://github.com/noviandf/shift-kpi-system"
+  },
+  {
+  "id": "personal-finance-app",
+  "title": "Personal Finance Tracker",
+  "tech_stack": ["Next.js", "Google Apps Script", "Google Sheets API"],
+  "summary": "Aplikasi pelacakan finansial berarsitektur serverless, mengintegrasikan frontend modern dengan Google Apps Script sebagai REST API dan Spreadsheet sebagai basis data tanpa biaya server.",
+  "image": "/images/finance-tracker.webp",
+  "repo_url": "https://github.com/username/finance-app",
+  "live_url": "https://finance-tracker-eta-swart.vercel.app/"
+}
 ]
