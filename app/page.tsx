@@ -30,21 +30,23 @@ export default function Home() {
               Praktisi IT Support yang berfokus pada keandalan infrastruktur dan otomatisasi. Memadukan kemampuan troubleshooting jaringan dan server dengan keahlian pengembangan backend untuk membangun sistem operasional yang efisien dan terukur.
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2 relative z-10">
-              <a 
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=noviandf10@gmail.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative z-10 text-sm bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium cursor-pointer"
-              >
-                Email Me
-              </a>
-              <a 
-                href="https://linkedin.com/in/noviandf" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="relative z-10 text-sm border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium cursor-pointer"
-              >
-                LinkedIn
+         <a 
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=noviandf10@gmail.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="relative z-10 text-sm bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium cursor-pointer"
+  >
+    Email Me
+  </a>
+
+  <a 
+    href="https://linkedin.com/in/noviandf" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="relative z-10 text-sm border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium cursor-pointer"
+  >
+    LinkedIn
+  </a>
             </div>
           </div>
           
