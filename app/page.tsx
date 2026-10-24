@@ -1,69 +1,60 @@
 "use client";
 
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import projectsData from '../data/projects.json';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  return (
-    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-16 space-y-16">
-        
-        {/* HEADER & TOGGLE */}
-        <div className="flex justify-end">
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white transition-all duration-300 shadow-sm"
-              aria-label="Toggle Dark Mode"
-            >
-              {theme === 'dark' ? (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                </svg>
-              )}
-            </button>
-          )}
-        </div>
+  if (!mounted) return null;
 
-        {/* HERO SECTION */}
-        <section className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-8">
+  return (
+    <main className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300 relative pt-12">
+      {/* Floating Glassmorphism Navbar & Theme Toggle */}
+      <Navbar />
+
+      <div className="max-w-6xl mx-auto px-6 py-12 space-y-20">
+        
+        {/* HERO / PROFILE SECTION */}
+        <section id="profile" className="scroll-mt-28 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-8 pt-4">
           <div className="space-y-5 text-center md:text-left flex-1 md:max-w-3xl">
             <h1 className="text-4xl font-extrabold tracking-tight">Novian Dwi Fernanda</h1>
             <h2 className="text-xl text-gray-600 dark:text-gray-400 font-medium">IT Support Specialist | Internal Tools & Operations</h2>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify md:text-left">
               Praktisi IT Support yang berfokus pada keandalan infrastruktur dan otomatisasi. Memadukan kemampuan troubleshooting jaringan dan server dengan keahlian pengembangan backend untuk membangun sistem operasional yang efisien dan terukur.
             </p>
-        <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2 relative z-10">
-        <a 
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=noviandf10@gmail.com" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="relative z-10 text-sm bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium cursor-pointer"
-        >
-        Email Me
-        </a>
-        <a 
-        href="https://linkedin.com/in/noviandf" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className="relative z-10 text-sm border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium cursor-pointer"
-        >
-        LinkedIn
-        </a>
-        </div>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2 relative z-10">
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=noviandf10@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative z-10 text-sm bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-md hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors font-medium cursor-pointer"
+              >
+                Email Me
+              </a>
+              <a 
+                href="https://linkedin.com/in/noviandf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="relative z-10 text-sm border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium cursor-pointer"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="/cv.pdf" 
+                download 
+                className="relative z-10 text-sm bg-blue-600 text-white px-5 py-2.5 rounded-md hover:bg-blue-700 transition-colors font-medium flex items-center gap-2 cursor-pointer"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                Download CV
+              </a>
+            </div>
           </div>
           
           <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 group">
@@ -79,97 +70,11 @@ export default function Home() {
           </div>
         </section>
 
-     {/* WORK EXPERIENCE & EDUCATION */}
-        <section className="grid md:grid-cols-2 gap-12">
-          {/* Kolom Pengalaman Kerja */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2">Pengalaman Kerja</h3>
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-bold text-lg">IT Support</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">TGA Solution (Surakarta) | Mei 2025 - Sekarang</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1">
-                  <li>Memelihara perangkat keras, perangkat lunak, dan jaringan kantor.</li>
-                  <li>Mengelola aset ±30 perangkat dan menyelesaikan tiket kendala IT.</li>
-                  <li>Membangun internal tools: Uptime Kuma, Grafana, web manajemen aset, dan sistem tiket.</li>
-                  <li>Mengeksekusi eskalasi insiden kritis ke vendor pihak ketiga dan menyusun laporan eksekutif.</li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-lg">Media Specialist (Personal Project)</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Angate Digital (Klaten) | Juni 2024 - Januari 2025</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1">
-                  <li>Merancang rencana konten strategis dan melakukan analisis tren media sosial.</li>
-                  <li>Mendevelop landing page perusahaan untuk mendukung kampanye digital.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-lg">IT Support Store</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">PT Indomarco Prismatama (Klaten) | April 2022 - Mei 2024</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1">
-                  <li>Melaksanakan pemeliharaan rutin hardware, software, & network di 60 toko cabang.</li>
-                  <li>Menangani troubleshooting secara remote, pelaporan basis data, dan administrasi sistematis.</li>
-                </ul>
-              </div>
-
-                <div>
-                <h4 className="font-bold text-lg">Admin Social Media</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Bakso Tengkleng Mas Bambang (Klaten) | November 2021 - Desember 2021</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1">
-                  <li>Mengelola akun Facebook untuk beberapa cabang perusahaan</li>
-                  <li>Melakukan optimasi organik pada akun media sosial beberapa cabang</li>
-                  <li>Memposting konten setiap hari</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-lg">IT Support Intern</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Kominfo Klaten | Feb 2020 - Apr 2020</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 text-sm mt-2 space-y-1">
-                  <li>Membantu instalasi infrastruktur pengkabelan LAN, crimping, dan konfigurasi Access Point.</li>
-                </ul>
-              </div>
-            </div>
+        {/* PROJECTS SECTION */}
+        <section id="projects" className="scroll-mt-28 space-y-6">
+          <div className="flex items-center gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Featured Projects</h3>
           </div>
-
-          {/* Kolom Pendidikan */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2">Pendidikan</h3>
-            <div className="space-y-6">
-              <div>
-                <h4 className="font-bold text-lg">S1 Sistem Informasi</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Universitas Terbuka | Jan 2023 - Sekarang</p>
-                <p className="text-gray-700 dark:text-gray-300 text-sm mt-2 leading-relaxed">
-                  Fokus pada rekayasa perangkat lunak dan manajemen basis data. Mengembangkan arsitektur Shift Scheduling & KPI Evaluation System berbasis web dengan Laravel sebagai Capstone Project.
-                </p>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-lg">Kursus Digital Marketing</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">LKP Kember | Sep 2021 - Des 2021</p>
-                 <p className="text-gray-700 dark:text-gray-300 text-sm mt-2 leading-relaxed">
-                    Mempelajari strategi pemasaran digital terintegrasi, mencakup pembuatan landing page, perancangan konten visual & copywriting, eksekusi kampanye Meta & Google Ads, serta analisis data performa.x``
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* TECHNICAL SKILLS */}
-        <section className="space-y-4">
-          <h3 className="text-2xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2">Technical Capabilities</h3>
-          <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-            <li><span className="font-semibold text-black dark:text-white">Infrastructure & DevOps:</span> Debian Linux, Docker, MikroTik, Grafana, Uptime Kuma, PowerShell.</li>
-            <li><span className="font-semibold text-black dark:text-white">Backend Development:</span> PHP, Laravel, CodeIgniter, Node.js, Python.</li>
-            <li><span className="font-semibold text-black dark:text-white">Databases & Architecture:</span> MySQL, PostgreSQL, WebSockets, REST API.</li>
-          </ul>
-        </section>
-
-        {/* PROJECTS */}
-        <section className="space-y-6">
-          <h3 className="text-2xl font-semibold border-b border-gray-200 dark:border-gray-700 pb-2">Featured Projects</h3>
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {projectsData.map((project: any) => (
               <div key={project.id} className="border border-gray-200 dark:border-gray-700 p-4 rounded-xl bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition flex flex-col h-full group">
@@ -209,8 +114,239 @@ export default function Home() {
             ))}
           </div>
         </section>
-        
+
+        {/* WORK EXPERIENCE & EDUCATION SECTION */}
+        <section id="background" className="scroll-mt-28 grid md:grid-cols-2 gap-8 lg:gap-12 py-4">
+          {/* Kolom Pengalaman Kerja */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Pengalaman Kerja</h3>
+            </div>
+
+            <div className="space-y-4">
+              {/* Item 1 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      IT Support
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      TGA Solution (Surakarta)
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Mei 2025 - Sekarang
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-xs mt-3 space-y-1.5 leading-relaxed">
+                  <li>Memelihara perangkat keras, perangkat lunak, dan jaringan kantor.</li>
+                  <li>Mengelola aset ±30 perangkat dan menyelesaikan tiket kendala IT.</li>
+                  <li>Membangun internal tools: Uptime Kuma, Grafana, web manajemen aset, dan sistem tiket.</li>
+                  <li>Mengeksekusi eskalasi insiden kritis ke vendor pihak ketiga dan menyusun laporan eksekutif.</li>
+                </ul>
+              </div>
+
+              {/* Item 2 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      Media Specialist <span className="text-xs font-normal text-gray-500">(Personal Project)</span>
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      Angate Digital (Klaten)
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Juni 2024 - Jan 2025
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-xs mt-3 space-y-1.5 leading-relaxed">
+                  <li>Merancang rencana konten strategis dan melakukan analisis tren media sosial.</li>
+                  <li>Mendevelop landing page perusahaan untuk mendukung kampanye digital.</li>
+                </ul>
+              </div>
+
+              {/* Item 3 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      IT Support Store
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      PT Indomarco Prismatama (Klaten)
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Apr 2022 - Mei 2024
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-xs mt-3 space-y-1.5 leading-relaxed">
+                  <li>Melaksanakan pemeliharaan rutin hardware, software, & network di 60 toko cabang.</li>
+                  <li>Menangani troubleshooting secara remote, pelaporan basis data, dan administrasi sistematis.</li>
+                </ul>
+              </div>
+
+              {/* Item 4 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      Admin Social Media Intern
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      Bakso Tengkleng Mas Bambang (Klaten)
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Nov 2021 - Des 2021
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-xs mt-3 space-y-1.5 leading-relaxed">
+                  <li>Mengelola akun Facebook untuk beberapa cabang perusahaan.</li>
+                  <li>Melakukan optimasi organik pada akun media sosial beberapa cabang.</li>
+                  <li>Memposting konten setiap hari.</li>
+                </ul>
+              </div>
+
+              {/* Item 5 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      IT Support Intern
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      Kominfo Klaten
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Feb 2020 - Apr 2020
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-xs mt-3 space-y-1.5 leading-relaxed">
+                  <li>Membantu instalasi infrastruktur pengkabelan LAN, crimping, dan konfigurasi Access Point.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Kolom Pendidikan */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Pendidikan</h3>
+            </div>
+
+            <div className="space-y-4">
+              {/* Edu 1 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      S1 Sistem Informasi
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      Universitas Terbuka
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Jan 2023 - Sekarang
+                  </span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-xs mt-3 leading-relaxed">
+                  Fokus pada rekayasa perangkat lunak dan manajemen basis data. Mengembangkan arsitektur Shift Scheduling & KPI Evaluation System berbasis web dengan Laravel sebagai Capstone Project.
+                </p>
+              </div>
+
+              {/* Edu 2 */}
+              <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm hover:shadow-md group">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-2">
+                  <div>
+                    <h4 className="font-bold text-base text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      Kursus Digital Marketing
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-xs font-medium mt-0.5">
+                      LKP Kember
+                    </p>
+                  </div>
+                  <span className="text-[11px] font-semibold px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md border border-gray-200 dark:border-gray-700">
+                    Sep 2021 - Des 2021
+                  </span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-xs mt-3 leading-relaxed">
+                  Mempelajari strategi pemasaran digital terintegrasi, mencakup pembuatan landing page, perancangan konten visual & copywriting, eksekusi kampanye Meta & Google Ads, serta analisis data performa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TECHNICAL SKILLS SECTION */}
+        <section id="skills" className="scroll-mt-28 space-y-6 py-4">
+          <div className="flex items-center gap-3 border-b border-gray-200 dark:border-gray-800 pb-3">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Technical Capabilities</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Infrastructure & DevOps */}
+            <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm">
+              <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-3">
+                Infrastructure & DevOps
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["Debian Linux", "Docker", "MikroTik", "Grafana", "Uptime Kuma", "PowerShell"].map((skill) => (
+                  <span 
+                    key={skill} 
+                    className="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-md font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend Development */}
+            <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm">
+              <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-3">
+                Backend Development
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["PHP", "Laravel", "CodeIgniter", "Node.js", "Python"].map((skill) => (
+                  <span 
+                    key={skill} 
+                    className="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-md font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Databases & Architecture */}
+            <div className="bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-5 hover:border-gray-400 dark:hover:border-gray-700 transition-all shadow-sm">
+              <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-3">
+                Databases & Architecture
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {["MySQL", "PostgreSQL", "WebSockets", "REST API"].map((skill) => (
+                  <span 
+                    key={skill} 
+                    className="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-md font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
+      <footer className="border-t border-gray-200 dark:border-gray-800 pt-8 pb-12 text-center text-xs text-gray-500 dark:text-gray-400">
+        <p>© {new Date().getFullYear()} Novian Dwi Fernanda. Built with Next.js & Tailwind CSS.</p>
+      </footer>
     </main>
   );
 }
