@@ -45,10 +45,6 @@ export default function Home() {
                 className="relative z-10 text-sm border border-gray-300 dark:border-gray-600 px-5 py-2.5 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors font-medium cursor-pointer"
               >
                 LinkedIn
-              </a>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-                Download CV
-              </a>
             </div>
           </div>
           
